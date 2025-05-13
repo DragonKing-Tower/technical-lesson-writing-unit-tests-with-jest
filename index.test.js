@@ -12,4 +12,18 @@ describe("pointsForWord", () => {
     //check output matches predone calcuations
     expect(points).toBe(7);
   });
+  it("returns 0 for empty string:", () => {
+    const word = "";
+
+    const points = pointsForWord(word);
+
+    expect(points).toBe(0);
+  });
+  it("ignores non-alphanumeric charactors", () => {
+    const word = "hello!";
+
+    const points = pointsForWord(word);
+
+    expect(points).toBe(8);
+  });
 });
